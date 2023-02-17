@@ -1,12 +1,6 @@
 :root {
-  --blue-1: rgb(45, 94, 144);
-  /* --blue-1: rgb(41, 221, 38); */
-  --gray-1: rgb(246, 246, 246);
-}
-.body {
-  background-image: url("../ui/Assignment-4-\ UX.png");
-  background-size: cover;
-  opacity: 0.5;
+  --blue-1: #2d5e90;
+  --gray-1: #f6f6f6;
 }
 /* to override default properties of the tags */
 * {
@@ -38,8 +32,7 @@
 }
 /* styling for the card components*/
 .card-container {
-  margin: 10px;
-  margin-bottom: 15px;
+  margin: 10px 10px 15px;
 }
 .card {
   box-sizing: content-box;
@@ -58,7 +51,7 @@
   text-align: justify;
   background-color: var(--gray-1);
   line-height: 1.65;
-  font-size: 101%;
+  font-size: 16px;
   padding: 25px;
 }
 .float-left {
