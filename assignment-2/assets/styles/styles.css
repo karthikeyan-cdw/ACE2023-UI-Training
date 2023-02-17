@@ -1,8 +1,8 @@
 /* style for entire body */
 .main {
   margin: 0px;
-  font-family: Roboto, sans-serif;
   font-family: "Poppins", sans-serif;
+  font-family: Roboto, sans-serif;
 }
 /* styles for the tourism header section */
 .tourism-header {
@@ -41,7 +41,7 @@
 .tourism-card-title {
   font-size: 220%;
   font-variant: monospace;
-  font-weight: 200;
+  font-weight: 300;
   margin: 10px auto;
   letter-spacing: 1.2;
 }
@@ -51,9 +51,7 @@
   margin: 10px 0px 30px;
 }
 .tourism-card-content {
-  font-size: larger;
   font-size: 18px;
-
   font-weight: 300;
   line-height: 1.3;
 }
