@@ -1,0 +1,66 @@
+:root {
+  --blue-1: rgb(45, 94, 144);
+  /* --blue-1: rgb(41, 221, 38); */
+  --gray-1: rgb(246, 246, 246);
+}
+.body {
+  background-image: url("../ui/Assignment-4-\ UX.png");
+  background-size: cover;
+  opacity: 0.5;
+}
+/* to override default properties of the tags */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+/* header styling */
+.header {
+  background-color: var(--blue-1);
+  color: white;
+  text-align: center;
+  font-size: 11px;
+  padding: 30px;
+}
+/* main section styling */
+.main {
+  width: 85%;
+  margin: 30px auto;
+  padding-left: 5px;
+}
+/* splitting into two columns */
+.left-div {
+  width: 61%;
+}
+.right-div {
+  width: 38.5%;
+}
+/* styling for the card components*/
+.card-container {
+  margin: 10px;
+  margin-bottom: 15px;
+}
+.card {
+  box-sizing: content-box;
+  width: 100%;
+  border: 1px solid var(--blue-1);
+  margin-bottom: 10px;
+}
+.card-header {
+  background-color: var(--blue-1);
+  color: white;
+  padding: 15px 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.card-content {
+  text-align: justify;
+  background-color: var(--gray-1);
+  line-height: 1.65;
+  font-size: 101%;
+  padding: 25px;
+}
+.float-left {
+  float: left;
+}
