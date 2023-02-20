@@ -7,6 +7,7 @@
   --profile-icon-color: #b2b2b2;
   --dropdown-color: #e9e9e9;
 }
+/* universal styles */
 body {
   background-color: var(--bg-color-main);
   margin-bottom: 80px;
@@ -16,12 +17,13 @@ body {
   border: 0px;
   font-family: Roboto, sans-serif;
 }
+/* header section */
 .logo {
   width: 220px;
   margin: 0px 20px;
 }
 .header {
-  height: 120px;
+  height: 110px;
   margin: 40px 100px 0px;
   position: relative;
 }
@@ -39,11 +41,13 @@ body {
   width: 70px;
   height: 70px;
   background-color: var(--profile-icon-color);
+  margin-top: -20px;
+  margin-right: 20px;
 }
 .menu-dropdown {
-  width: 220px;
+  width: 250px;
   position: absolute;
-  right: 5px;
+  right: 15px;
   background-color: var(--dropdown-color);
   display: none;
   top: 90px;
@@ -67,6 +71,7 @@ body {
 .menu-dropdown .menu-item:hover {
   background-color: var(--theme-color-1);
 }
+/* bottom navbar */
 .navbar {
   background-color: var(--bg-color-nav);
   padding: 30px;
@@ -82,6 +87,7 @@ body {
   font-size: 24px;
   font-weight: 500;
 }
+/* main section */
 .main {
   margin: 10px 110px;
 }
@@ -103,15 +109,12 @@ body {
   font-weight: 400;
 }
 .favorite-icon {
-  position: relative;
+  position: absolute;
   font-size: 25px;
   color: var(--theme-color-1);
   margin-left: 250px;
   margin-top: 5px;
 }
-/* .favorite-icon:hover {
-  background-color: var(--theme-color-1);
-} */
 .size-icon {
   position: absolute;
   display: inline-block;
