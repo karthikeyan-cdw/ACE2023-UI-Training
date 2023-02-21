@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- cdn for font awesome icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -11,13 +12,14 @@
     />
     <!-- To set title in the title bar -->
     <title>FashionZ</title>
+    <!-- cdn for google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
-
+    <!-- external stylesheet -->
     <link rel="stylesheet" href="assets/styles/styles.css" />
   </head>
 
@@ -27,30 +29,32 @@
       <div>
         <img class="logo" src="assets/images/logo.png" alt="fashionz-logo" />
       </div>
-      <div class="menu-false-box">
-        <div class="menu-container">
-          <span class="profile-icon"></span>
-          <div class="menu-dropdown">
-            <div class="menu-item"><a href="">My Account</a></div>
-            <div class="menu-item"><a href="">My Orders</a></div>
-            <div class="menu-item"><a href="">My Wish List</a></div>
-            <div class="menu-item"><a href="">Logout</a></div>
-          </div>
+      <!-- menu container -->
+      <div class="menu-container">
+        <!-- profile image -->
+        <span class="profile-icon"></span>
+        <div class="menu-dropdown">
+          <div class="menu-item"><a href="">My Account</a></div>
+          <div class="menu-item"><a href="">My Orders</a></div>
+          <div class="menu-item"><a href="">My Wish List</a></div>
+          <div class="menu-item"><a href="">Logout</a></div>
         </div>
       </div>
-      <h1 class="logo-text"></h1>
-      <div clas="account-icon"></div>
     </header>
     <!-- main section -->
     <main class="main">
+      <!-- product cards -->
       <div class="product-card">
         <div class="product-img-container">
-          <i class="fa-regular fa-star favorite-icon"></i>
-          <img
-            class="product-img"
-            src="assets/images/product-1.png"
-            alt="product-1"
-          />
+          <i class="fa-regular fa-star favorite-icon empty-star"></i>
+          <i class="fa-solid fa-star favorite-icon solid-star"></i>
+          <div class="product-img-holder">
+            <img
+              class="product-img"
+              src="assets/images/shirt.png"
+              alt="shirt"
+            />
+          </div>
         </div>
         <span class="size-icon">S</span>
         <div class="product-details">
@@ -62,11 +66,13 @@
       <div class="product-card">
         <div class="product-img-container">
           <i class="fa-regular fa-star favorite-icon"></i>
-          <img
-            class="product-img"
-            src="assets/images/product-2.png"
-            alt="product-2"
-          />
+          <div class="product-img-holder">
+            <img
+              class="product-img"
+              src="assets/images/jacket.png"
+              alt="jacket"
+            />
+          </div>
         </div>
         <span class="size-icon">M</span>
         <div class="product-details">
@@ -78,11 +84,13 @@
       <div class="product-card">
         <div class="product-img-container">
           <i class="fa-regular fa-star favorite-icon"></i>
-          <img
-            class="product-img"
-            src="assets/images/product-3.png"
-            alt="product-3"
-          />
+          <div class="product-img-holder">
+            <img
+              class="product-img"
+              src="assets/images/tshirt.png"
+              alt="tshirt"
+            />
+          </div>
         </div>
         <span class="size-icon">S</span>
         <div class="product-details">
@@ -94,11 +102,13 @@
       <div class="product-card">
         <div class="product-img-container">
           <i class="fa-regular fa-star favorite-icon"></i>
-          <img
-            class="product-img"
-            src="assets/images/product-3.png"
-            alt="product-4"
-          />
+          <div class="product-img-holder">
+            <img
+              class="product-img"
+              src="assets/images/sweatshirt.png"
+              alt="sweatshirt"
+            />
+          </div>
         </div>
         <span class="size-icon">S</span>
         <div class="product-details">
@@ -109,14 +119,16 @@
       </div>
       <div class="product-card">
         <div class="product-img-container">
-          <i class="fa-regular fa-star favorite-icon"></i>
-          <img
-            class="product-img"
-            src="assets/images/product-1.png"
-            alt="product-1"
-          />
+          <div class="product-img-holder">
+            <i class="fa-regular fa-star favorite-icon"></i>
+            <img
+              class="product-img"
+              src="assets/images/shirt.png"
+              alt="shirt"
+            />
+          </div>
+          <span class="size-icon">S</span>
         </div>
-        <span class="size-icon">S</span>
         <div class="product-details">
           <h5 class="product-name">Bath Wardrobe</h5>
           <h6 class="product-price">₹ 850</h6>
@@ -126,11 +138,13 @@
       <div class="product-card">
         <div class="product-img-container">
           <i class="fa-regular fa-star favorite-icon"></i>
-          <img
-            class="product-img"
-            src="assets/images/product-2.png"
-            alt="product-2"
-          />
+          <div class="product-img-holder">
+            <img
+              class="product-img"
+              src="assets/images/jacket.png"
+              alt="jacket"
+            />
+          </div>
         </div>
         <span class="size-icon">M</span>
         <div class="product-details">
@@ -142,11 +156,13 @@
       <div class="product-card">
         <div class="product-img-container">
           <i class="fa-regular fa-star favorite-icon"></i>
-          <img
-            class="product-img"
-            src="assets/images/product-3.png"
-            alt="product-3"
-          />
+          <div class="product-img-holder">
+            <img
+              class="product-img"
+              src="assets/images/tshirt.png"
+              alt="tshirt"
+            />
+          </div>
         </div>
         <span class="size-icon">S</span>
         <div class="product-details">
@@ -158,11 +174,13 @@
       <div class="product-card">
         <div class="product-img-container">
           <i class="fa-regular fa-star favorite-icon"></i>
-          <img
-            class="product-img"
-            src="assets/images/product-3.png"
-            alt="product-4"
-          />
+          <div class="product-img-holder">
+            <img
+              class="product-img"
+              src="assets/images/sweatshirt.png"
+              alt="sweatshirt"
+            />
+          </div>
         </div>
         <span class="size-icon">S</span>
         <div class="product-details">
@@ -172,13 +190,15 @@
         </div>
       </div>
     </main>
-    <footer></footer>
-    <nav class="navbar">
-      <a href="">Jackets</a>
-      <a href="">Shirts</a>
-      <a href="">Trousers</a>
-      <a href="">Pants</a>
-      <a href="">Shoes</a>
-    </nav>
+    <footer>
+      <!-- navigation for categories -->
+      <nav class="navbar">
+        <a href="">Jackets</a>
+        <a href="">Shirts</a>
+        <a href="">Trousers</a>
+        <a href="">Pants</a>
+        <a href="">Shoes</a>
+      </nav>
+    </footer>
   </body>
 </html>
