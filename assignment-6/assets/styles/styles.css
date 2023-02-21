@@ -25,7 +25,7 @@ body {
 }
 .logo {
   width: 220px;
-  margin: 0px 20px;
+  margin: 0px 40px;
 }
 .menu-container {
   position: absolute;
@@ -51,7 +51,7 @@ body {
   right: 15px;
   background-color: var(--dropdown-color);
   display: none;
-  top: 90px;
+  top: 75px;
   text-align: left;
   padding: 20px 0px;
   z-index: 10;
@@ -59,7 +59,7 @@ body {
 .menu-dropdown a {
   text-decoration: none;
   color: black;
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 300px;
   top: 300px;
 }
@@ -78,13 +78,13 @@ body {
 }
 /* product card */
 .product-card {
-  width: 323px;
+  width: 324px;
   margin: 25px;
   display: inline-block;
   box-sizing: border-box;
 }
 .product-img-container {
-  height: 400px;
+  height: 370px;
   background-color: var(--card-color-card);
   padding: 20px 40px;
   text-align: center;
@@ -134,7 +134,7 @@ body {
 .add-to-cart-button {
   color: var(--profile-icon-color);
   padding: 10px 15px;
-  margin: 5px;
+  margin: 10px 5px;
   font-size: 18px;
   background-color: transparent;
   border: 1px solid var(--profile-icon-color);
@@ -151,8 +151,8 @@ body {
   margin-left: 120px;
   margin-top: 2px;
 }
-.empty-star:hover {
-  display: none;
+.empty-star:hover + .solid-star {
+  display: inline;
 }
 .solid-star {
   display: none;
@@ -161,7 +161,7 @@ body {
 /* bottom navbar */
 .navbar {
   background-color: var(--bg-color-nav);
-  padding: 40px;
+  padding: 40px 0px;
   text-align: center;
   position: fixed;
   bottom: 0;
@@ -170,7 +170,7 @@ body {
 .navbar a {
   text-decoration: none;
   color: var(--text-color-1);
-  margin: 0px 20px;
+  margin: 0px 30px;
   font-size: 24px;
   font-weight: 500;
 }
