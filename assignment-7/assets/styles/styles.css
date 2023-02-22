@@ -1,0 +1,29 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background-color: black;
+  color: white;
+  font-family: Roboto, sans-serif;
+  margin: 0px 5%;
+}
+.header {
+  text-align: center;
+}
+.main-heading {
+  font-size: 20px;
+  font-weight: 900;
+}
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.product-img-container {
+  width: 30%;
+  margin: 20px;
+}
+.product-image {
+  width: 100%;
+}
