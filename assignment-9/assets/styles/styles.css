@@ -1,0 +1,102 @@
+/* Universal styling */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: skyblue;
+}
+/* style for the heading */
+.heading {
+  text-align: center;
+  font-size: 5em;
+  animation-name: rainbow-colors-text;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+/* styling for  the animated div */
+.animated-div {
+  animation-name: rainbow-colors-bg;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  border-radius: 50%;
+}
+/* animation triggered on hover */
+.animated-div:hover {
+  animation-name: change-to-square, rainbow-colors-bg;
+  animation-duration: 5s;
+}
+/* style for the text inside the animated div */
+.animated-div-text {
+  font-size: 2em;
+  margin: auto;
+  padding: 45% 0px;
+  animation-name: rainbow-colors-text;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+
+/* animation rule for rainbow color background animation */
+@keyframes rainbow-colors-bg {
+  0% {
+    background-color: violet;
+  }
+  16% {
+    background-color: indigo;
+  }
+  32% {
+    background-color: blue;
+  }
+  48% {
+    background-color: green;
+  }
+  64% {
+    background-color: yellow;
+  }
+  80% {
+    background-color: orange;
+  }
+  100% {
+    background-color: red;
+  }
+}
+/* animation rule for text color animation */
+@keyframes rainbow-colors-text {
+  0% {
+    color: indigo;
+  }
+  16% {
+    color: blue;
+  }
+  32% {
+    color: green;
+  }
+  48% {
+    color: yellow;
+  }
+  64% {
+    color: orange;
+  }
+  80% {
+    color: red;
+  }
+  100% {
+    color: violet;
+  }
+}
+/* animation rule for border radius animation */
+@keyframes change-to-square {
+  0% {
+    border-radius: 50%;
+  }
+  50% {
+    border-radius: 5%;
+  }
+  100% {
+    border-radius: 50%;
+  }
+}
