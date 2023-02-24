@@ -21,7 +21,7 @@ console.log(2 == "2");
 // location for printing jerseys. Do not modify the existing players list.
 
 // 1. list with names of 11 players
-players = [
+let players = [
   "Rohit Sharma",
   "KL Rahul",
   "Shubman Gill",
@@ -42,7 +42,7 @@ players.shift();
 console.log("After removing first player\n", players);
 
 // 3. number of players
-no_of_players = players.length;
+let no_of_players = players.length;
 console.log("No of players\n", no_of_players);
 
 // 4. add other player
@@ -58,14 +58,14 @@ console.log("After sorting the players\n", players);
 function assignJerseyNumber(player) {
   playersObj[player] = Math.round(Math.random() * 100);
 }
-playersObj = {};
+let playersObj = {};
 players.forEach(assignJerseyNumber);
 
 console.log("Players and jersey number\n");
 for (let player in playersObj) console.log(player, playersObj[player]);
 
 // 7. storing uppercase names for printing in Jersey
-jerseyData = {};
+let jerseyData = {};
 for (let player in playersObj)
   jerseyData[player.toUpperCase()] = playersObj[player];
 
@@ -83,11 +83,11 @@ for (let player in jerseyData) console.log(player, jerseyData[player]);
 
 // 1. Function to display numbers from 1 to 100.
 
-function display_1_to_100() {
+function displayOneToHundred() {
   for (let i = 1; i <= 100; i++) console.log(i);
 }
 console.log("Number from 1 to 100");
-display_1_to_100();
+displayOneToHundred();
 
 // 2. Function to display today's date in DD/MM/YYYY format.
 
@@ -95,34 +95,34 @@ console.log("Today's date", new Date().toLocaleDateString());
 
 // 3. Function which accepts a Celsius value as parameter and returns the Fahrenheit value.
 
-function celsius_to_fahrenheit(celsius) {
+function celsiusToFahrenheit(celsius) {
   return (celsius * 9) / 5 + 32;
 }
-celsius = 10;
-console.log("Celsius:", celsius, "Fahrenheit:", celsius_to_fahrenheit(32));
+let celsius = 10;
+console.log("Celsius:", celsius, "Fahrenheit:", celsiusToFahrenheit(32));
 
 // 4. Function which accepts an array of numbers as parameter and return the average of those numbers.
 function average(arr) {
-  total = 0;
-  count = 0;
+  let total = 0;
+  let count = 0;
   arr.forEach((v) => {
     (total += v), count++;
   });
   return total / count;
 }
 
-arr = [1, 2, 3];
+let arr = [1, 2, 3];
 console.log("Average of", arr, "is", average(arr));
 
 // 5. Function to reverse a given string.
 
 function reverseString() {
-  new_string = "";
+  let new_string = "";
   for (idx = string.length - 1; idx >= 0; idx--) {
     new_string += string[idx];
   }
   return new_string;
 }
 
-string = "reverse";
+let string = "reverse";
 console.log("Reverse of", string, "is", reverseString(string));
