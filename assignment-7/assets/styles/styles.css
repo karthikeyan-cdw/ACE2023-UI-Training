@@ -14,6 +14,11 @@ body {
   font-family: "Roboto Condensed", sans-serif;
   padding: 0px 10vw;
 }
+body {
+  background-image: url("../ux/Ex7\ Desktop\ Design.png");
+  background-size: cover;
+  opacity: 0.5;
+}
 /* header section */
 .header {
   display: flex;
@@ -93,9 +98,24 @@ body {
   padding: 10px;
 }
 .split-line {
-  margin: 100px;
-  padding: 20px 0px 0px;
-  font-size: 1vw;
+  margin: 120px 0px 90px;
+}
+.sep-line-short {
+  background-color: white;
+  display: inline-block;
+  width: 35px;
+  height: 2px;
+}
+.sep-line-space {
+  display: inline-block;
+  width: 30px;
+  height: 1px;
+}
+.sep-line-long {
+  background-color: white;
+  display: inline-block;
+  width: 220px;
+  height: 2px;
 }
 /* styling for the social icons */
 .social-icons {
