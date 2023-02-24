@@ -2,7 +2,7 @@
 
 // Calculator object having basic mathematical operations
 
-calculator = {
+var calculator = {
   add: (val1, val2) => val1 + val2, // to add two numbers
   subtract: (val1, val2) => val1 - val2, // to subtract two numbers
   multiply: (val1, val2) => val1 * val2, // to multiply two numbers
@@ -11,12 +11,12 @@ calculator = {
 };
 
 // Creating references
-print = console.log;
-calc = calculator;
+var print = console.log;
+var calc = calculator;
 
 // Input values
-number1 = 10;
-number2 = 10;
+let number1 = 10;
+let number2 = 10;
 
 print(number1 + " + " + number2 + " = " + calc.add(number1, number2));
 print(number1 + " - " + number2 + " = " + calc.subtract(number1, number2));
