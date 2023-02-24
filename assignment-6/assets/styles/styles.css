@@ -68,9 +68,11 @@ body {
 }
 .menu-container:hover .menu-dropdown {
   display: inline-block;
+  cursor: pointer;
 }
 .menu-dropdown .menu-item:hover {
   background-color: var(--theme-color-1);
+  cursor: pointer;
 }
 /* main section */
 .main {
@@ -143,6 +145,7 @@ body {
   background-color: var(--theme-color-1);
   color: black;
   border: 1px solid var(--theme-color-1);
+  cursor: pointer;
 }
 .favorite-icon {
   position: absolute;
@@ -157,7 +160,6 @@ body {
 .solid-star {
   display: none;
 }
-
 /* bottom navbar */
 .navbar {
   background-color: var(--bg-color-nav);
