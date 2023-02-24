@@ -9,7 +9,7 @@ body {
 /* style for the heading */
 .heading {
   text-align: center;
-  font-size: 5em;
+  font-size: 80px;
   animation-name: rainbow-colors-text;
   animation-duration: 10s;
   animation-iteration-count: infinite;
@@ -32,7 +32,7 @@ body {
 }
 /* style for the text inside the animated div */
 .animated-div-text {
-  font-size: 2em;
+  font-size: 32px;
   margin: auto;
   padding: 45% 0px;
   animation-name: rainbow-colors-text;
