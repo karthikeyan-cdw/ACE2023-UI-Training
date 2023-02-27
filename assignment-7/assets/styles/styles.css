@@ -27,14 +27,14 @@ body {
   font-size: 10vw;
   font-weight: 100;
 }
-.main-heading-highlight {
+.main-heading span {
   font-weight: 900;
 }
 .tagline {
   font-size: 3.35vw;
   padding: 10px 0px 0px;
 }
-.tagline-highlight {
+.tagline span {
   color: var(--blue-shade);
 }
 .mail-id {
