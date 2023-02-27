@@ -14,11 +14,6 @@ body {
   font-family: "Roboto Condensed", sans-serif;
   padding: 0px 10vw;
 }
-body {
-  background-image: url("../ux/Ex7\ Desktop\ Design.png");
-  background-size: cover;
-  opacity: 0.5;
-}
 /* header section */
 .header {
   display: flex;
