@@ -85,7 +85,7 @@ body {
   object-fit: contain;
 }
 /* styling for the footer section */
-.footer {
+footer {
   display: flex;
   flex-direction: column;
   align-items: center;
