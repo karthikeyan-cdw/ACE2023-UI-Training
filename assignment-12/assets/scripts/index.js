@@ -15,6 +15,7 @@ document
   .addEventListener("click", shapeClickHandler);
 document.getElementById("square").addEventListener("click", shapeClickHandler);
 
+// Value of pi
 const pi = 3.141;
 
 // Shapes object
@@ -124,6 +125,7 @@ function showTickMark(shape) {
 
 // Function to change the section
 function changeSection(hide, show) {
+  localStorage.setItem("current_section", show);
   document.getElementById(hide).style.display = "none";
   document.getElementById(show).style.display = "flex";
 }
@@ -151,7 +153,6 @@ function createTable(enteredValue) {
   let perimeter = shapes[selectedShape].calculatePerimeter(
     parseFloat(enteredValue)
   );
-  console.log(area, perimeter);
   let table = `
   <div class="grid-row">
     <span class="grid-column">${shapes[selectedShape]["dimension"]}</span
