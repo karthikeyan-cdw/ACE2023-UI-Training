@@ -1,20 +1,26 @@
 // Event Listeners
-document
-  .getElementById("next-button")
-  .addEventListener("click", buttonClickHandler);
-document
-  .getElementById("calculate-button")
-  .addEventListener("click", buttonClickHandler);
-document
-  .getElementById("start-again-button")
-  .addEventListener("click", buttonClickHandler);
+function startEventListener() {
+  document
+    .getElementById("next-button")
+    .addEventListener("click", buttonClickHandler);
+  document
+    .getElementById("calculate-button")
+    .addEventListener("click", buttonClickHandler);
+  document
+    .getElementById("start-again-button")
+    .addEventListener("click", buttonClickHandler);
 
-document.getElementById("circle").addEventListener("click", shapeClickHandler);
-document
-  .getElementById("triangle")
-  .addEventListener("click", shapeClickHandler);
-document.getElementById("square").addEventListener("click", shapeClickHandler);
-
+  document
+    .getElementById("circle")
+    .addEventListener("click", shapeClickHandler);
+  document
+    .getElementById("triangle")
+    .addEventListener("click", shapeClickHandler);
+  document
+    .getElementById("square")
+    .addEventListener("click", shapeClickHandler);
+}
+startEventListener();
 // Value of pi
 const pi = 3.141;
 
@@ -99,8 +105,6 @@ function buttonClickHandler(event) {
   } else if (event.target.id == "start-again-button") {
     changeSection("step-3", "step-1");
     hideTicks();
-  } else {
-    window.alert("ID Mismatch");
   }
 }
 

@@ -2,13 +2,13 @@
 :root {
   --theme-color-1: #000000;
   --theme-color-2: #ffffff;
-  --theme-color-3: #b5f38d;
-  --shape-color-1: #43967e;
-  --shape-color-2: #f3aeda;
+  --theme-color-3: #a9e087;
+  --shape-color-1: #00987d;
+  --shape-color-2: #ffabdc;
   --shape-color-3: #e0e0e0;
-  --table-color-1: #2c60cf;
-  --table-color-2: #4a5d7c;
-  --table-color-3: #4b86f7;
+  --table-color-1: #0d62d6;
+  --table-color-2: #455d7e;
+  --table-color-3: #3288ff;
 }
 /* Universal stylings */
 * {
@@ -45,7 +45,7 @@ body {
 }
 .section-heading {
   font-size: 52px;
-  font-weight: 300;
+  font-weight: 400;
 }
 /* Styling for the shapes container */
 .shapes-container {
