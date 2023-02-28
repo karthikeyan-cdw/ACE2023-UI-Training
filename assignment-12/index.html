@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta for SEO -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- meta set the viewport settings -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- meta to add description about the page -->
+    <meta
+      name="description"
+      content="Math Kids is a learning application for kids to learn about the basic shapes"
+    />
+    <!-- To set title in the title bar -->
+    <title>Math Kids</title>
+    <!-- cdn for google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto+Condensed:wght@300;400;700&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- external stylesheet -->
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+  </head>
+  <body>
+    <!-- header section -->
+    <header class="header">
+      <h1>
+        <span>MATH KIDS</span>
+        <span class="tagline">KIDS LEARNING APP</span>
+      </h1>
+    </header>
+    <!-- main section -->
+    <main>
+      <!-- section for step-1 -->
+      <section id="step-1" class="section-container">
+        <!-- section heading -->
+        <h2 class="section-heading">1. Choose a shape</h2>
+        <!-- div to hold the shapes -->
+        <div class="shapes-container">
+          <div id="circle" class="shape circle-shape"></div>
+          <div id="triangle" class="shape triangle-shape"></div>
+          <div id="square" class="shape square-shape"></div>
+        </div>
+        <!-- next button -->
+        <button id="next-button" class="button next-button">NEXT</button>
+      </section>
+      <!-- section for step-2 -->
+      <section id="step-2" class="input-dimension section-container">
+        <!-- section heading -->
+        <h2 id="step-2-heading" class="section-heading"></h2>
+        <!-- input field to get the dimension -->
+        <input type="text" id="input-dimension" class="dimension-input-box" />
+        <!-- calculate button -->
+        <button id="calculate-button" class="button calculate-button">
+          CALCULATE
+        </button>
+      </section>
+      <!-- section for step-3 -->
+      <section id="step-3" class="result-section section-container">
+        <!-- container to display the selected shape -->
+        <div id="selected-shape"></div>
+        <!-- section heading -->
+        <h2 id="shape-name" class="section-heading"></h2>
+        <!-- div to inject the results -->
+        <div id="output-grid" class="output-grid"></div>
+        <!-- start again button -->
+        <button id="start-again-button" class="button">START AGAIN</button>
+      </section>
+    </main>
+    <!-- linking the javascript file -->
+    <script type="text/javascript" src="./assets/scripts/index.js"></script>
+  </body>
+</html>
