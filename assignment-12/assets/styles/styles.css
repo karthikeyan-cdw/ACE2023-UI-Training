@@ -153,13 +153,13 @@ body {
 }
 .output-grid .grid-column:nth-child(1) {
   background-color: var(--table-color-1);
-  width: 200px;
+  min-width: 200px;
 }
 .output-grid .grid-column:nth-child(2) {
   background-color: var(--table-color-2);
-  width: 120px;
+  min-width: 120px;
 }
 .output-grid .grid-column:nth-child(3) {
   background-color: var(--table-color-3);
-  width: 130px;
+  min-width: 130px;
 }

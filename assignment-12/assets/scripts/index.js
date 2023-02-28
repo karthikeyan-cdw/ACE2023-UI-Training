@@ -76,8 +76,8 @@ var shapes = {
 // Shape Click Handler Function
 function shapeClickHandler(event) {
   document.getElementById("next-button").style.visibility = "visible";
-  localStorage.setItem("shape", event.target.id);
   showTickMark(event.target.id);
+  localStorage.setItem("shape", event.target.id);
 }
 
 // Button Click Handler Function
@@ -98,6 +98,7 @@ function buttonClickHandler(event) {
     document.getElementById("input-dimension").value = "";
   } else if (event.target.id == "start-again-button") {
     changeSection("step-3", "step-1");
+    hideTicks();
   } else {
     window.alert("ID Mismatch");
   }
@@ -117,15 +118,19 @@ function showTickMark(shape) {
   <polyline points="52 16 24 46 14 36" class="tickmark"></polyline>
 </svg>
 `;
+  hideTicks();
+  document.getElementById(shape).innerHTML = tick;
+}
+
+// Function to hide tick marks
+function hideTicks() {
   for (let shape in shapes) {
     document.getElementById(shape).innerHTML = "";
   }
-  document.getElementById(shape).innerHTML = tick;
 }
 
 // Function to change the section
 function changeSection(hide, show) {
-  localStorage.setItem("current_section", show);
   document.getElementById(hide).style.display = "none";
   document.getElementById(show).style.display = "flex";
 }
