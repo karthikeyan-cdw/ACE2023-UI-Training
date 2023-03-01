@@ -1,9 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <!-- meta set the viewport settings -->
     <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- meta to add description about the page -->
+    <meta
+      name="description"
+      content="Fancy hats page with some transition effects"
+    />
+    <!-- To set title in the title bar -->
     <title>Fancy Hats</title>
-
+    <!-- cdn for font-awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
@@ -11,45 +18,50 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-
+    <!-- cdn for google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="stylesheet" href="assets/styles/styles.css" />
+    <!-- external stylesheet -->
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
   </head>
   <body>
+    <!-- header section -->
     <header>
+      <!-- navbar -->
       <nav class="navbar">
         <i class="fa-solid fa-bars hamburger"></i>
         <div class="nav-menu">
           <div class="hat-icon">
-            <img src="assets/images/hat-icon.svg" alt="hat-icon" />
+            <img src="./assets/images/hat-icon.svg" alt="hat-icon" />
           </div>
-          <div class="menu-item"><a href="">COWBOY HATS</a></div>
-          <div class="menu-item"><a href="">DAD HATS</a></div>
-          <div class="menu-item"><a href="">FEDORAS</a></div>
-          <div class="menu-item"><a href="">TRIBAL HATS</a></div>
-          <div class="menu-item"><a href="">FLAT CAPS</a></div>
-          <div class="menu-item"><a href="">DERBY HATS</a></div>
-          <div class="menu-item"><a href="">ARMY CAPS</a></div>
-          <div class="menu-item"><a href="">CLOCHE HATS</a></div>
-          <div class="menu-item"><a href="">BEANIES</a></div>
-          <div class="menu-item"><a href="">TRAPPER HATS</a></div>
-          <div class="menu-item"><a href="">SNAPBACKS</a></div>
-          <div class="menu-item"><a href="">TRUCKER HATS</a></div>
-          <div class="menu-item"><a href="">VISORS</a></div>
+          <ul>
+            <li class="menu-item"><a href="#">COWBOY HATS</a></li>
+            <li class="menu-item"><a href="#">DAD HATS</a></li>
+            <li class="menu-item"><a href="#">FEDORAS</a></li>
+            <li class="menu-item"><a href="#">TRIBAL HATS</a></li>
+            <li class="menu-item"><a href="#">FLAT CAPS</a></li>
+            <li class="menu-item"><a href="#">DERBY HATS</a></li>
+            <li class="menu-item"><a href="#">ARMY CAPS</a></li>
+            <li class="menu-item"><a href="#">CLOCHE HATS</a></li>
+            <li class="menu-item"><a href="#">BEANIES</a></li>
+            <li class="menu-item"><a href="#">TRAPPER HATS</a></li>
+            <li class="menu-item"><a href="#">SNAPBACKS</a></li>
+            <li class="menu-item"><a href="#">TRUCKER HATS</a></li>
+            <li class="menu-item"><a href="#">VISORS</a></li>
+          </ul>
         </div>
       </nav>
     </header>
+    <!-- main section -->
     <main>
       <div class="cover-image-container cover-image-text">
         <img
           class="cover-image"
-          src="assets/images/background-image.png"
+          src="./assets/images/background-image.png"
           alt="cover image - fancy hats"
         />
         <h1 class="top-header">FANCY HATS</h1>
@@ -63,6 +75,7 @@
         </div>
       </div>
     </main>
+    <!-- footer section -->
     <footer class="footer">
       <i class="fa-brands fa-twitter social-icon"></i>
       <i class="fa-brands fa-facebook social-icon"></i>
