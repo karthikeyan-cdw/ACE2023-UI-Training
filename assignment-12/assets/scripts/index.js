@@ -21,6 +21,7 @@ function startEventListener() {
     .addEventListener("click", shapeClickHandler);
 }
 startEventListener();
+
 // Value of pi
 const pi = 3.141;
 
@@ -110,26 +111,14 @@ function buttonClickHandler(event) {
 
 // Function to show the tick mark
 function showTickMark(shape) {
-  let tick = `
-  <svg
-  class="tick"
-  style="color: white"
-  xmlns="http://www.w3.org/2000/svg"
-  width="80"
-  height="80"
-  viewBox="0 0 64 64"
->
-  <polyline points="52 16 24 46 14 36" class="tickmark"></polyline>
-</svg>
-`;
   hideTicks();
-  document.getElementById(shape).innerHTML = tick;
+  document.querySelector(`#${shape} svg`).style.display = "inline";
 }
 
 // Function to hide tick marks
 function hideTicks() {
   for (let shape in shapes) {
-    document.getElementById(shape).innerHTML = "";
+    document.querySelector(`#${shape} svg`).style.display = "none";
   }
 }
 
