@@ -37,12 +37,12 @@ var shapes = {
       return (2 * pi * r).toFixed(2);
     },
     dimension: "RADIUS",
-    dim_unit: "cm",
-    area_unit: "sq cm",
-    peri_unit: "cm",
-    dim_formula: "r",
-    area_formula: "&pi;r\u00b2",
-    peri_formula: "2&pi;r",
+    dimensionUnit: "cm",
+    areaUnit: "sq cm",
+    perimeterUnit: "cm",
+    dimensionFormula: "r",
+    areaFormula: "&pi;r\u00b2",
+    perimeterFormula: "2&pi;r",
   },
   triangle: {
     stepTwoHeading: "2. Enter Side (Base & Height)",
@@ -54,12 +54,12 @@ var shapes = {
       return s * 3;
     },
     dimension: "SIDE",
-    dim_unit: "cm",
-    area_unit: "sq cm",
-    peri_unit: "cm",
-    dim_formula: "s",
-    area_formula: "0.433 * s * s",
-    peri_formula: "3 * s",
+    dimensionUnit: "cm",
+    areaUnit: "sq cm",
+    perimeterUnit: "cm",
+    dimensionFormula: "s",
+    areaFormula: "0.433 * s * s",
+    perimeterFormula: "3 * s",
   },
   square: {
     stepTwoHeading: "2. Enter Side",
@@ -71,12 +71,12 @@ var shapes = {
       return 4 * s;
     },
     dimension: "SIDE",
-    dim_unit: "cm",
-    area_unit: "sq cm",
-    peri_unit: "cm",
-    dim_formula: "s",
-    area_formula: "s * s",
-    peri_formula: "4 * s",
+    dimensionUnit: "cm",
+    areaUnit: "sq cm",
+    perimeterUnit: "cm",
+    dimensionFormula: "s",
+    areaFormula: "s * s",
+    perimeterFormula: "4 * s",
   },
 };
 
@@ -155,18 +155,18 @@ function createTable(enteredValue) {
   let results = [
     [
       shapes[selectedShape]["dimension"],
-      shapes[selectedShape]["dim_formula"],
-      enteredValue + " " + shapes[selectedShape]["dim_unit"],
+      shapes[selectedShape]["dimensionFormula"],
+      enteredValue + " " + shapes[selectedShape]["dimensionUnit"],
     ],
     [
       "AREA",
-      shapes[selectedShape]["area_formula"],
-      area + " " + shapes[selectedShape]["area_unit"],
+      shapes[selectedShape]["areaFormula"],
+      area + " " + shapes[selectedShape]["areaUnit"],
     ],
     [
       "PERIMETER",
-      shapes[selectedShape]["peri_formula"],
-      perimeter + " " + shapes[selectedShape]["peri_unit"],
+      shapes[selectedShape]["perimeterFormula"],
+      perimeter + " " + shapes[selectedShape]["perimeterUnit"],
     ],
   ];
   // Creating the results table

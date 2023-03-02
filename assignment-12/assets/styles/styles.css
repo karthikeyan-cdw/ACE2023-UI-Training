@@ -36,7 +36,7 @@ body {
   flex-wrap: wrap;
   color: var(--theme-color-2);
   background-color: var(--theme-color-1);
-  height: 73vh;
+  height: 85vh;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -108,6 +108,7 @@ body {
   color: var(--theme-color-2);
   font-size: 24px;
   font-weight: 700;
+  border-radius: 2px;
 }
 .button:hover {
   cursor: pointer;
@@ -125,6 +126,9 @@ body {
 .calculate-button {
   padding: 10px 40px;
 }
+.start-again-button {
+  padding: 10px 30px;
+}
 .next-button {
   visibility: hidden;
 }
@@ -140,6 +144,7 @@ body {
   flex-direction: column;
   margin-bottom: 80px;
   text-align: left;
+  font-weight: 900;
 }
 .output-grid .grid-row {
   margin: 1px;
@@ -150,7 +155,7 @@ body {
   box-sizing: border-box;
   font-size: 20px;
   font-weight: 300;
-  padding: 5px 8px;
+  padding: 7px 14px;
 }
 .output-grid .grid-column:nth-child(1) {
   background-color: var(--table-color-1);
