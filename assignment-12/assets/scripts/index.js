@@ -151,30 +151,33 @@ function createTable(enteredValue) {
   let perimeter = shapes[selectedShape].calculatePerimeter(
     parseFloat(enteredValue)
   );
-  let table = `
-  <div class="grid-row">
-    <span class="grid-column">${shapes[selectedShape]["dimension"]}</span
-    ><span class="grid-column">${shapes[selectedShape]["dim_formula"]}</span
-    ><span class="grid-column">${
-      enteredValue + " " + shapes[selectedShape]["dim_unit"]
-    }</span>
-  </div>
-  <div class="grid-row">
-    <span class="grid-column">${"AREA"}</span
-    ><span class="grid-column">${shapes[selectedShape]["area_formula"]}</span
-    ><span class="grid-column">${
-      area + " " + shapes[selectedShape]["area_unit"]
-    }</span>
-  </div>
-  <div class="grid-row">
-    <span class="grid-column">${"PERIMETER"}</span
-    ><span class="grid-column">${shapes[selectedShape]["peri_formula"]}</span
-    ><span class="grid-column">${
-      perimeter + " " + shapes[selectedShape]["peri_unit"]
-    }</span>
-  </div>
-</div>
-`;
+  // Stored results
+  let results = [
+    [
+      shapes[selectedShape]["dimension"],
+      shapes[selectedShape]["dim_formula"],
+      enteredValue + " " + shapes[selectedShape]["dim_unit"],
+    ],
+    [
+      "AREA",
+      shapes[selectedShape]["area_formula"],
+      area + " " + shapes[selectedShape]["area_unit"],
+    ],
+    [
+      "PERIMETER",
+      shapes[selectedShape]["peri_formula"],
+      perimeter + " " + shapes[selectedShape]["peri_unit"],
+    ],
+  ];
+  // Creating the results table
+  let table = "";
+  for (let i = 0; i < 3; i++) {
+    table += `<div class="grid-row">`;
+    for (let j = 0; j < 3; j++) {
+      table += `<span class="grid-column">${results[i][j]}</span>`;
+    }
+    table += `</div>`;
+  }
   document.getElementById("output-grid").innerHTML = table;
 }
 function isValid(enteredValue) {
