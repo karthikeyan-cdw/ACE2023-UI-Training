@@ -167,5 +167,5 @@ body {
 }
 .output-grid .grid-column:nth-child(3) {
   background-color: var(--table-color-3);
-  min-width: 130px;
+  min-width: 150px;
 }
