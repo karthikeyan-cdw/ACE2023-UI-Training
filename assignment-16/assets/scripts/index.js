@@ -1,42 +1,42 @@
 // Function holding the banking functionalities
-function bank() {
+(function () {
   // stored accounts
   var accounts = [
     {
-      acc_no: 1,
-      card_no: 1,
+      accountNo: 1,
+      cardNo: 1,
       pin: 1,
       balance: 0,
     },
     {
-      acc_no: 2,
-      card_no: 2,
+      accountNo: 2,
+      cardNo: 2,
       pin: 2,
       balance: 0,
     },
     {
-      acc_no: 3,
-      card_no: 3,
+      accountNo: 3,
+      cardNo: 3,
       pin: 3,
       balance: 0,
     },
     {
-      acc_no: 4,
-      card_no: 4,
+      accountNo: 4,
+      cardNo: 4,
       pin: 4,
       balance: 0,
     },
     {
-      acc_no: 5,
-      card_no: 5,
+      accountNo: 5,
+      cardNo: 5,
       pin: 5,
       balance: 0,
     },
   ];
   // Function to validate PIN Number
-  function validate(card_no, pin) {
+  function validate(cardNo, pin) {
     for (let account of accounts) {
-      if (account.card_no === card_no) {
+      if (account.cardNo === cardNo) {
         if (account.pin === pin) {
           return true;
         } else {
@@ -48,13 +48,25 @@ function bank() {
     alert("Card Not Found");
     return false;
   }
+  // Function to validate valid amount
+  function isValidAmount(amount) {
+    if (!isNum(amount)) return false;
+    else if (amount < 1) {
+      alert("Enter a valid amount");
+      return false;
+    }
+    return true;
+  }
   // Function to deposit amount
-  function deposit(card_no, pin) {
-    function _deposit(card_no, pin) {
-      if (validate(card_no, pin)) {
-        let amount = Number(prompt("Enter amount to be deposited:"));
+  function deposit(cardNo, pin) {
+    function _deposit(cardNo, pin) {
+      if (validate(cardNo, pin)) {
+        do {
+          amount = prompt("Enter amount to be deposited:");
+        } while (!isValidAmount(amount));
+        amount = Number(amount);
         for (let account of accounts) {
-          if (account.card_no === card_no) {
+          if (account.cardNo === cardNo) {
             account.balance += amount;
             alert(`Deposited: ${amount}\nBalance: ${account.balance}`);
             return;
@@ -62,15 +74,18 @@ function bank() {
         }
       }
     }
-    return _deposit(card_no, pin);
+    return _deposit(cardNo, pin);
   }
   // Function to withdraw amount
-  function withdraw(card_no, pin) {
-    function _withdraw(card_no, pin) {
-      if (validate(card_no, pin)) {
-        let amount = Number(prompt("Enter amount to be withdrawed:"));
+  function withdraw(cardNo, pin) {
+    function _withdraw(cardNo, pin) {
+      if (validate(cardNo, pin)) {
+        do {
+          amount = prompt("Enter amount to be withdrawed:");
+        } while (!isValidAmount(amount));
+        amount = Number(amount);
         for (let account of accounts) {
-          if (account.card_no === card_no) {
+          if (account.cardNo === cardNo) {
             if (account.balance < amount) {
               alert("Insufficient balance");
               return;
@@ -82,50 +97,65 @@ function bank() {
         }
       }
     }
-    return _withdraw(card_no, pin);
+    return _withdraw(cardNo, pin);
   }
   // Function to check balance
-  function checkBalance(card_no, pin) {
-    function _checkBalance(card_no, pin) {
-      if (validate(card_no, pin)) {
+  function checkBalance(cardNo, pin) {
+    function _checkBalance(cardNo, pin) {
+      if (validate(cardNo, pin)) {
         for (let account of accounts) {
-          if (account.card_no === card_no) {
+          if (account.cardNo === cardNo) {
             alert(`Balance : ${account["balance"]}`);
             return;
           }
         }
       }
     }
-    return _checkBalance(card_no, pin);
+    return _checkBalance(cardNo, pin);
   }
   // To Start the CDM Machine
   while (true) {
     // Getting the user input for service required
     let choice = prompt(
-      "Choose service required:\n1.Deposit 2.Withdraw\n3.Balance Enquiry 4.Cancel"
+      "Choose service required:\n1.Deposit 2.Withdraw\n3.Balance Enquiry 4.Exit"
     );
     // General validations
-    if (choice === "") break;
+    if (!isNum(choice)) continue;
     choice = Number(choice);
-    if (choice < 1 && choice > 4) break;
+    if (choice < 1 || choice > 4) {
+      alert("Choose between 1 and 4");
+      continue;
+    }
     if (choice === 4) break;
     // Getting card number and PIN
-    let card_no = Number(prompt("Enter your card no:"));
-    let pin = Number(prompt("Enter you PIN:"));
+    do {
+      cardNo = prompt("Enter your card no:");
+    } while (!isNum(cardNo));
+    do {
+      pin = prompt("Enter you PIN:");
+    } while (!isNum(pin));
+    cardNo = Number(cardNo);
+    pin = Number(cardNo);
     // Selecting the action to be performed
     switch (choice) {
       case 1:
-        deposit(card_no, pin);
+        deposit(cardNo, pin);
         break;
       case 2:
-        withdraw(card_no, pin);
+        withdraw(cardNo, pin);
         break;
       case 3:
-        checkBalance(card_no, pin);
+        checkBalance(cardNo, pin);
         break;
     }
   }
-}
+})();
 
-// Function call to start the banking services
-bank();
+// Function to validate whether the entered value number
+function isNum(val) {
+  if (isNaN(val)) {
+    alert("Enter only Number");
+    return false;
+  }
+  return true;
+}
