@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- meta for SEO -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- meta set the viewport settings -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- meta to add description about the page -->
+    <meta
+      name="description"
+      content="Blender Movies is an application related to movies"
+    />
+    <!-- To set title in the title bar -->
+    <title>Blender Movies</title>
+    <!-- cdn for font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- cdn for google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- cdn for jquery -->
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <!-- <link rel="stylesheet" href="/resources/demos/style.css" /> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <!-- external stylesheet -->
+    <link rel="stylesheet" href="./assets/styles/styles.css" />
+  </head>
+  <body>
+    <!-- header section -->
+    <header>
+      <div class="heading">
+        <h1>Blender Movies</h1>
+        <div id="profile-section" class="profile-section">
+          <p id="user-name" class="user-name">Jim Halpert</p>
+          <div>
+            <img
+              src="./assets/images/reviewers/jim.png"
+              alt="jim profile photo"
+              class="profile-icon"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- main section -->
+    <main>
+      <!-- left container -->
+      <section id="left-container" class="left-container">
+        <!-- video section -->
+        <section id="video-section" class="video-section">
+          <video id="video" class="video" controls></video>
+          <article
+            id="video-description-section"
+            class="video-description-section"
+          ></article>
+        </section>
+        <!-- comments section -->
+        <section id="comments-section" class="comments-section">
+          <h2 class="comments-heading">Comments</h2>
+          <div id="comments" class="comments"></div>
+        </section>
+      </section>
+      <!-- aside section -->
+      <aside>
+        <h2>Upcoming Projects</h2>
+        <div id="posters-container"></div>
+      </aside>
+    </main>
+    <!-- footer section -->
+    <footer>
+      <div class="footer-content">
+        <div class="copyright">
+          <span class="copyright-symbol">&copy;</span>Copyright 2022
+        </div>
+        <div class="copyright-owner">Blender Movies</div>
+      </div>
+      <div class="messaging">
+        <i class="fa-solid fa-message"></i>
+      </div>
+    </footer>
+    <!-- link to javascript file -->
+    <script type="text/javascript" src="./assets/scripts/index.js"></script>
+  </body>
+</html>
