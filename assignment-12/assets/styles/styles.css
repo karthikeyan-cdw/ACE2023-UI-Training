@@ -1,0 +1,171 @@
+/* Setting variables for colors */
+:root {
+  --theme-color-1: #000000;
+  --theme-color-2: #ffffff;
+  --theme-color-3: #a9e087;
+  --shape-color-1: #00987d;
+  --shape-color-2: #ffabdc;
+  --shape-color-3: #e0e0e0;
+  --table-color-1: #0d62d6;
+  --table-color-2: #455d7e;
+  --table-color-3: #3288ff;
+}
+/* Universal stylings */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  font-family: "Noto Sans JP", sans-serif;
+}
+/* Styling for the header section */
+.header {
+  background-color: var(--theme-color-3);
+  padding: 20px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+.tagline {
+  float: right;
+}
+/* Styling for the sections */
+.section-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  color: var(--theme-color-2);
+  background-color: var(--theme-color-1);
+  height: 85vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 40px;
+  padding: 60px;
+}
+.section-heading {
+  font-size: 52px;
+  font-weight: 400;
+}
+/* Styling for the shapes container */
+.shapes-container {
+  display: flex;
+  flex-direction: row;
+  margin: 90px;
+}
+.shapes-container .shape:hover {
+  cursor: pointer;
+}
+/* Getting individual shapes using css */
+.shape {
+  margin: 10px 40px;
+}
+.circle-shape {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background-color: var(--shape-color-1);
+}
+.triangle-shape {
+  width: 150px;
+  height: 150px;
+  background-image: linear-gradient(
+      to bottom right,
+      transparent 50%,
+      var(--shape-color-2) 0
+    ),
+    linear-gradient(to top right, var(--shape-color-2) 50%, transparent 0);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  background-position: left, right;
+}
+.square-shape {
+  width: 150px;
+  height: 150px;
+  background-color: var(--shape-color-3);
+}
+/* Tickmark using css and svg */
+.tick {
+  display: none;
+  text-align: center;
+  padding: 35px;
+}
+.triangle-shape .tick {
+  padding: 60px 0px 0px 0px;
+}
+.tickmark {
+  fill: none;
+  stroke: #fff;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2px;
+}
+/* Styling for the buttons */
+.button {
+  padding: 10px 70px;
+  background-color: var(--theme-color-1);
+  border: 2px solid var(--theme-color-2);
+  color: var(--theme-color-2);
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 2px;
+}
+.button:hover {
+  cursor: pointer;
+}
+/* Styling for dimension input box */
+.dimension-input-box {
+  background-color: var(--theme-color-1);
+  border: 2px solid var(--theme-color-2);
+  color: var(--theme-color-2);
+  padding: 20px 150px;
+  margin: 50px;
+  font-size: 40px;
+  text-align: center;
+}
+.calculate-button {
+  padding: 10px 40px;
+}
+.start-again-button {
+  padding: 10px 30px;
+}
+.next-button {
+  visibility: hidden;
+}
+.input-dimension {
+  display: none;
+}
+/* Stylings for the results sections */
+.result-section {
+  display: none;
+}
+.output-grid {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 80px;
+  text-align: left;
+  font-weight: 900;
+}
+.output-grid .grid-row {
+  margin: 1px;
+}
+.output-grid .grid-column {
+  background-color: blue;
+  display: inline-block;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 7px 14px;
+}
+.output-grid .grid-column:nth-child(1) {
+  background-color: var(--table-color-1);
+  min-width: 200px;
+}
+.output-grid .grid-column:nth-child(2) {
+  background-color: var(--table-color-2);
+  min-width: 120px;
+}
+.output-grid .grid-column:nth-child(3) {
+  background-color: var(--table-color-3);
+  min-width: 150px;
+}
