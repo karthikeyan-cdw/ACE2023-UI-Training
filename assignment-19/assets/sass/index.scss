@@ -1,0 +1,173 @@
+// importing the partials
+@import "./reset";
+@import "./variables";
+@import "./functions";
+/* style for the body */
+body {
+  background-color: $secondary-color;
+  color: $primary-color;
+  font-family: $primary-font;
+  padding: 0px 10vw;
+}
+/* header section */
+.header {
+  @include flexColumn;
+  padding: 225px 0px 145px;
+}
+.main-heading {
+  font-size: 10vw;
+  font-weight: 100;
+  & span {
+    font-weight: 900;
+  }
+}
+.tagline {
+  font-size: 3.35vw;
+  padding: 10px 0px 0px;
+  & span {
+    color: $blue-shade;
+  }
+}
+.mail-id {
+  @include absolute($top: 70);
+  font-size: 1.65vw;
+  align-self: flex-end;
+}
+/* styling for the image gallery */
+.image-gallery {
+  @include flex($space: "between");
+}
+.product-img-container {
+  width: 31%;
+  margin: 15px;
+}
+.product-image {
+  max-width: 100%;
+}
+/* styling for the products section */
+.partners-section {
+  @include flex();
+  margin: 80px 0px 0px;
+  &-heading {
+    padding: 60px;
+    font-size: 3vw;
+    &-highlight {
+      color: $green-shade;
+    }
+  }
+}
+.partners-logo-container {
+  @include flex("between");
+  padding: 20px;
+}
+.partner-logo-container {
+  margin: 20px;
+}
+.partner-logo {
+  width: 150px;
+  height: 80px;
+  object-fit: contain;
+}
+/* styling for the footer section */
+footer {
+  @include flexColumn(nowrap);
+  margin: 100px 0px 90px;
+  padding: 10px;
+}
+.split-line {
+  margin: 120px 0px 90px;
+}
+.sep-line- {
+  &short {
+    display: inline-block;
+    background-color: $primary-color;
+    width: 35px;
+    height: 2px;
+  }
+  &space {
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+  }
+  &long {
+    display: inline-block;
+    background-color: $primary-color;
+    width: 220px;
+    height: 2px;
+  }
+}
+/* styling for the social icons */
+.social-icons {
+  @include flex;
+  margin: 0px 0px 30px;
+}
+.social-icon {
+  width: 2.75vw;
+  background-color: $primary-color;
+  border-radius: 50%;
+  border: solid $primary-color;
+  margin: 10px;
+}
+.footer-text {
+  font-size: 1.35vw;
+  margin: 50px 0px 60px;
+  font-weight: 500;
+  font-variant: normal;
+}
+/* media queries for responsive design */
+@media screen and (max-width: 1600px) {
+  .product-img-container {
+    width: 40%;
+    transition: 1ms;
+  }
+}
+@media screen and (max-width: 800px) {
+  .partners-section-heading {
+    font-size: 4vw;
+    transition: 1s;
+  }
+}
+@media screen and (max-width: 474px) {
+  .main-heading {
+    font-size: 15vw;
+  }
+  .tagline {
+    font-size: 7.5vw;
+    padding: 10px;
+  }
+  .mail-id {
+    font-size: 4vw;
+    position: static;
+    align-self: inherit;
+  }
+  .product-img-container {
+    width: 100%;
+    margin: 5px;
+  }
+  .partners-section-heading {
+    font-size: 8vw;
+    padding: 10px;
+  }
+  .partners-logo-container {
+    padding: 0px;
+  }
+  .partner-logo-container {
+    justify-content: space-between;
+  }
+  .partner-logo {
+    width: 110px;
+  }
+  .split-line {
+    font-size: 2vw;
+  }
+  .social-icon {
+    width: 10vw;
+    background-color: $primary-color;
+    border-radius: 50%;
+    border: solid $primary-color;
+    margin: 10px;
+  }
+  .footer-text {
+    font-size: 5vw;
+  }
+}

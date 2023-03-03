@@ -1,0 +1,39 @@
+@use "sass:string";
+@mixin absolute($top: None, $bottom: None, $left: None, $right: None) {
+  position: absolute;
+  @if $top != None {
+    top: string.unquote($top + "px");
+  }
+  @if $bottom != None {
+    bottom: string.unquote($bottom + "px");
+  }
+  @if $left != None {
+    left: string.unquote($left + "px");
+  }
+  @if $right != None {
+    right: string.unquote($right + "px");
+  }
+}
+@mixin flex($space: center, $wrap: wrap) {
+  display: flex;
+  @if $wrap == "wrap" {
+    flex-wrap: $wrap;
+  }
+  @if $space == "center" {
+    justify-content: center;
+  }
+  @if $space == "between" {
+    justify-content: space-between;
+  }
+  @if $space == "evenly" {
+    justify-content: space-evenly;
+  }
+  @if $space == "around" {
+    justify-content: space-around;
+  }
+}
+@mixin flexColumn($wrap: wrap) {
+  @include flex($wrap: $wrap);
+  flex-direction: column;
+  align-items: center;
+}
