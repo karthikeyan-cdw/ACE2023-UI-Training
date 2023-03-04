@@ -70,26 +70,22 @@ const video = {
 
 // Function to load the poster content and inject in the DOM
 function loadPosters() {
-  let container = document.getElementById("posters-container");
   let results = "";
   for (let poster of posters) {
     results += `<img src="${poster.imageUrl}" alt="${poster.title}" class="poster"/>`;
   }
-  container.innerHTML = results;
+  document.getElementById("posters-container").innerHTML = results;
 }
 loadPosters();
 
 // Function to load the video details and inject in the DOM
 function loadVideoDetails() {
-  let videoElement = document.getElementById("video");
   let videoSource = `<source src="${video.videoUrl}" type="video/mp4">`;
-  videoElement.innerHTML = videoSource;
-  let videoDescription = document.getElementById("video-description-section");
+  document.getElementById("video").innerHTML = videoSource;
   let description = `
   <h2 class="video-title">${video.title}</h2>
   <p class="video-description">${video.description}</p>`;
-  videoDescription.innerHTML = description;
-  let commentsElement = document.getElementById("comments");
+  document.getElementById("video-description-section").innerHTML = description;
   let comments = "";
   for (let comment of video.comments) {
     comments += `
@@ -107,7 +103,6 @@ function loadVideoDetails() {
   </div>
   `;
   }
-  commentsElement.innerHTML = comments;
+  document.getElementById("comments").innerHTML = comments;
 }
-
 loadVideoDetails();
