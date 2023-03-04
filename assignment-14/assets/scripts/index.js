@@ -12,25 +12,25 @@ startEventListeners();
 
 // regex validation conditions
 let formValidationConditions = {
-  fname: /^[a-zA-Z]{1,30}$/,
-  lname: /^[a-zA-Z]{1,30}$/,
+  firstName: /^[a-zA-Z]{1,30}$/,
+  lastName: /^[a-zA-Z]{1,30}$/,
   email: /^(([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]){2,8}(\.[a-z]){2,8})?$/,
   contact: /^[0-9]{10}$/,
   pincode: /^[0-9]{6}$/,
-  card_number: /^[0-9]{16}$/,
-  expiry_year: /^[0-9]{4}$/,
+  cardNumber: /^[0-9]{16}$/,
+  expiryYear: /^[0-9]{4}$/,
   cvv: /^[0-9]{3,4}$/,
 };
 
 // stored error text
 let errorText = {
-  fname: "First Name",
-  lname: "Last Name",
+  firstName: "First Name",
+  lastName: "Last Name",
   email: "Email Address",
   contact: "Contact Number",
   pincode: "PIN Code",
-  card_number: "Card Number",
-  expiry_year: "Card Expiry",
+  cardNumber: "Card Number",
+  expiryYear: "Card Expiry",
   cvv: "CVV",
 };
 
@@ -51,21 +51,37 @@ function validateForm() {
   }
 }
 
+// Function to update the DOM
+function updateDOM(
+  currElement,
+  errorTextClass = "",
+  errorStatement = "",
+  errorClass = ""
+) {
+  currElement.nextElementSibling.className = errorTextClass;
+  currElement.nextElementSibling.innerHTML = errorStatement;
+  currElement.className = errorClass;
+}
+
 // Function to validate the input text
 function validateInput(id, text) {
   let currElement = document.getElementById(id);
   if (isEmpty(text)) {
-    currElement.nextElementSibling.className = "error-text";
-    currElement.nextElementSibling.innerHTML = errorText[id] + " is required";
-    currElement.className = "error-input";
+    updateDOM(
+      currElement,
+      "error-text",
+      errorText[id] + " is required",
+      "error-input"
+    );
   } else if (!isValid(id, text)) {
-    currElement.nextElementSibling.className = "error-text";
-    currElement.nextElementSibling.innerHTML = errorText[id] + " is not valid";
-    currElement.className = "error-input";
+    updateDOM(
+      currElement,
+      "error-text",
+      errorText[id] + " is not valid",
+      "error-input"
+    );
   } else {
-    currElement.nextElementSibling.className = "";
-    currElement.nextElementSibling.innerHTML = "";
-    currElement.className = "";
+    updateDOM(currElement);
   }
 }
 
