@@ -33,6 +33,15 @@
       balance: 0,
     },
   ];
+
+  // Function to validate whether the entered value number
+  function isNum(val) {
+    if (isNaN(val)) {
+      alert("Enter only Number");
+      return false;
+    }
+    return true;
+  }
   // Function to validate PIN Number
   function validate(cardNo, pin) {
     for (let account of accounts) {
@@ -150,12 +159,3 @@
     }
   }
 })();
-
-// Function to validate whether the entered value number
-function isNum(val) {
-  if (isNaN(val)) {
-    alert("Enter only Number");
-    return false;
-  }
-  return true;
-}
