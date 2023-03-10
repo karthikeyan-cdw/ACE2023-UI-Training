@@ -6006,23 +6006,31 @@ let friends = [
 function loadFriendsList() {
   let list = "";
   friends.map((friend) => {
-    let card = `
-    <div class="card">
-    <div class="profile-photo">
-      <img
-        src=${friend.img}
-        alt="${friend.first_name + " " + friend.last_name} profile-photo"
-      />
-    </div>
-    <div class="details">
-      <div class="name">${friend.first_name + " " + friend.last_name}</div>
-      <div class="mail-id">${friend.email}</div>
-    </div>
-  </div>
-`;
-    list += card;
+    let card = document.createElement("div");
+    card.classList.add("card");
+    let profilePhotoContainer = document.createElement("div");
+    profilePhotoContainer.classList.add("profile-photo");
+    let profilePhoto = document.createElement("img");
+    profilePhoto.setAttribute("src", friend.img);
+    profilePhoto.setAttribute(
+      "alt",
+      `${friend.first_name + " " + friend.last_name} profile-photo`
+    );
+    let details = document.createElement("div");
+    details.classList.add("details");
+    let userName = document.createElement("div");
+    userName.classList.add("name");
+    userName.innerText = `${friend.first_name + " " + friend.last_name}`;
+    let mailID = document.createElement("div");
+    mailID.classList.add("mail-id");
+    mailID.innerText = friend.email;
+    details.appendChild(userName);
+    details.appendChild(mailID);
+    profilePhotoContainer.appendChild(profilePhoto);
+    card.appendChild(profilePhotoContainer);
+    card.appendChild(details);
+    document.getElementById("cards-container").appendChild(card);
   });
-  document.getElementById("cards-container").innerHTML = list;
 }
 
 loadFriendsList();
