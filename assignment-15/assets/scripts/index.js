@@ -70,39 +70,55 @@ const video = {
 
 // Function to load the poster content and inject in the DOM
 function loadPosters() {
-  let results = "";
   for (let poster of posters) {
-    results += `<img src="${poster.imageUrl}" alt="${poster.title}" class="poster"/>`;
+    let image = document.createElement("img");
+    image.classList.add("poster");
+    image.setAttribute("src", poster.imageUrl);
+    image.setAttribute("alt", poster.title);
+    document.getElementById("posters-container").appendChild(image);
   }
-  document.getElementById("posters-container").innerHTML = results;
 }
 loadPosters();
 
 // Function to load the video details and inject in the DOM
 function loadVideoDetails() {
-  let videoSource = `<source src="${video.videoUrl}" type="video/mp4">`;
-  document.getElementById("video").innerHTML = videoSource;
-  let description = `
-  <h2 class="video-title">${video.title}</h2>
-  <p class="video-description">${video.description}</p>`;
-  document.getElementById("video-description-section").innerHTML = description;
-  let comments = "";
+  let videoSource = document.createElement("source");
+  videoSource.setAttribute("src", video.videoUrl);
+  videoSource.setAttribute("type", "video/mp4");
+  document.getElementById("video").append(videoSource);
+  let videoTitle = document.createElement("h2");
+  videoTitle.classList.add("video-title");
+  videoTitle.innerText = video.title;
+  let videoDescription = document.createElement("p");
+  videoDescription.classList.add("video-description");
+  videoDescription.innerText = video.description;
+  let videoDescriptionSection = document.getElementById(
+    "video-description-section"
+  );
+  videoDescriptionSection.appendChild(videoTitle);
+  videoDescriptionSection.appendChild(videoDescription);
   for (let comment of video.comments) {
-    comments += `
-    <div class="comment-card">
-    <div class="profile-photo">
-      <img
-        src=${"./assets/" + comment.image}
-        alt="${comment.name} profile-photo"
-      />
-    </div>
-    <div class="details">
-      <div class="name">${comment.name}</div>
-      <div class="comment">${comment.comment}</div>
-    </div>
-  </div>
-  `;
+    let commentCard = document.createElement("div");
+    commentCard.classList.add("comment-card");
+    let profilePhoto = document.createElement("div");
+    profilePhoto.classList.add("profile-photo");
+    let image = document.createElement("img");
+    image.setAttribute("src", `./assets/${comment.image}`);
+    image.setAttribute("alt", `${comment.name} profile-photo`);
+    let details = document.createElement("div");
+    details.classList.add("details");
+    let userName = document.createElement("div");
+    userName.classList.add("name");
+    userName.innerText = comment.name;
+    let commentText = document.createElement("div");
+    commentText.classList.add("comment");
+    commentText.innerText = comment.comment;
+    details.appendChild(userName);
+    details.appendChild(commentText);
+    profilePhoto.appendChild(image);
+    commentCard.appendChild(profilePhoto);
+    commentCard.appendChild(details);
+    document.getElementById("comments").appendChild(commentCard);
   }
-  document.getElementById("comments").innerHTML = comments;
 }
 loadVideoDetails();
