@@ -19,8 +19,13 @@ body {
 }
 /* styling for header */
 .header {
-  width: 250px;
+  width: 300px;
   margin: auto;
+}
+.header img {
+  width: 300px;
+  height: 150px;
+  object-fit: cover;
 }
 /* styling for the form container */
 .form-container {
