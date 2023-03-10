@@ -22,16 +22,21 @@ body {
   background-color: var(--background-color-1);
 }
 /* styling for header */
-.header {
+header {
   width: 300px;
   margin: auto;
+}
+header img {
+  width: 300px;
+  height: 150px;
+  object-fit: cover;
 }
 /* styling for the tabs */
 .tabs {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 35%;
+  width: 36%;
   margin: auto;
   padding: 20px;
   border: None !important;
@@ -57,10 +62,11 @@ body {
   font-weight: 600;
   letter-spacing: 1.2px;
   padding: 10px 25px !important;
+  margin-top: 3px;
 }
 /* styling for the tab */
 .tab {
-  height: 530px;
+  height: 520px;
   box-shadow: 0px 0px 5px var(--shadow-color);
   padding: 15px !important;
   text-align: justify;
@@ -84,10 +90,17 @@ body {
   border: 1px solid var(--accordion-border-color) !important;
   border-radius: 0;
   color: var(--primary-color) !important;
-  padding: 10px 25px 10px 0px !important;
+  padding: 5px 25px 5px 0px !important;
   font-size: 11px !important;
   font-weight: 600 !important;
   letter-spacing: 1.1px;
+}
+.accordion h3 span {
+  margin: 5px 3px;
+  scale: 0.8;
+}
+.accordion h3[aria-expanded="false"] span {
+  filter: brightness(0) invert(1);
 }
 .accordion div {
   border: 1px solid var(--accordion-border-color);
@@ -95,6 +108,7 @@ body {
   font-weight: 300 !important;
   padding: 15px 20px !important;
 }
+
 /* styling for the locations grid */
 .locations {
   height: 100%;

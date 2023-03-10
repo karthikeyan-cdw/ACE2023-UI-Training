@@ -10,23 +10,26 @@ $(function () {
 });
 // Inserting Accordion Component
 $(function () {
-  $("#accordion").accordion({ heightStyle: "centent" });
+  $("#accordion").accordion({ heightStyle: "content" });
 });
 // Loading Location Table
 $(document).ready(function () {
-  let locations_table = "";
   $.getJSON("./assets/store/locations.json", function (locations) {
     locations.map((location) => {
-      locations_table += `<div class="grid-row">
-      <span class="grid-column">
-      <img src="${flagsURL[location.country]}" alt="${location.country}"/>
-      </span>
-      <span class="grid-column">${location.state}</span>
-      <span class="grid-column">${location.city}</span>
-      <span class="grid-column">${location.contact}</span>
-      </div>`;
+      $("#locations").append(
+        $("<div>", { class: "grid-row" }).append([
+          $("<span>", { class: "grid-column" }).append(
+            $("<img>", {
+              src: flagsURL[location.country],
+              alt: `${location.country} flag`,
+            })
+          ),
+          $("<span>", { class: "grid-column" }).text(location.state),
+          $("<span>", { class: "grid-column" }).text(location.city),
+          $("<span>", { class: "grid-column" }).text(location.contact),
+        ])
+      );
     });
-    document.getElementById("locations").innerHTML = locations_table;
   }).fail(function () {
     alert("An error has occurred in loading JSON.");
   });
