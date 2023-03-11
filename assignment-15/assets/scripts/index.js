@@ -67,58 +67,117 @@ const video = {
     },
   ],
 };
+// Current user Details
+const currentUser = {
+  userName: "Micheal Scott",
+  profilePhotoURL: "./assets/images/reviewers/micheal.png",
+};
+// Starting event listeners
+function startEventListeners() {
+  document.getElementById("play-icon").addEventListener("click", playMovie);
+}
+startEventListeners();
+// Helper function to create a dom element
+function createElement(
+  tag = "div",
+  classList = [],
+  attributes = {},
+  text = ""
+) {
+  let element = document.createElement(tag);
+  for (let className of classList) {
+    element.classList.add(className);
+  }
+  for (let attribute in attributes) {
+    element.setAttribute(attribute, attributes[attribute]);
+  }
+  element.innerText = text;
+  return element;
+}
+// Function to set the current user
+function setCurrentUser(user) {
+  // Wrapper for profile
+  let profileFragment = document.createDocumentFragment();
+  profileFragment.appendChild(
+    createElement("p", ["user-name"], { id: "user-name" }, user.userName)
+  );
+  profileFragment.appendChild(
+    createElement("div").appendChild(
+      createElement("img", ["profile-icon"], {
+        src: user.profilePhotoURL,
+        alt: user.userName,
+      })
+    )
+  );
+  document.getElementById("profile-section").appendChild(profileFragment);
+}
+setCurrentUser(currentUser);
 
 // Function to load the poster content and inject in the DOM
 function loadPosters() {
-  for (let poster of posters) {
-    let image = document.createElement("img");
-    image.classList.add("poster");
-    image.setAttribute("src", poster.imageUrl);
-    image.setAttribute("alt", poster.title);
-    document.getElementById("posters-container").appendChild(image);
+  // Wrapper for posters
+  let postersFragment = document.createDocumentFragment();
+  for (let posterImage of posters) {
+    postersFragment.appendChild(
+      createElement("img", ["poster"], {
+        src: posterImage.imageUrl,
+        alt: posterImage.title,
+      })
+    );
   }
+  document.getElementById("posters-container").appendChild(postersFragment);
 }
 loadPosters();
 
-// Function to load the video details and inject in the DOM
+// Function to load the video details and inject into the DOM
 function loadVideoDetails() {
-  let videoSource = document.createElement("source");
-  videoSource.setAttribute("src", video.videoUrl);
-  videoSource.setAttribute("type", "video/mp4");
-  document.getElementById("video").append(videoSource);
-  let videoTitle = document.createElement("h2");
-  videoTitle.classList.add("video-title");
-  videoTitle.innerText = video.title;
-  let videoDescription = document.createElement("p");
-  videoDescription.classList.add("video-description");
-  videoDescription.innerText = video.description;
+  document.getElementById("video").appendChild(
+    createElement("source", [], {
+      src: `${video.videoUrl}#t=95`,
+      type: "video/mp4",
+    })
+  );
   let videoDescriptionSection = document.getElementById(
     "video-description-section"
   );
-  videoDescriptionSection.appendChild(videoTitle);
-  videoDescriptionSection.appendChild(videoDescription);
+  videoDescriptionSection.appendChild(
+    createElement("h2", ["video-title"], {}, video.title)
+  );
+  videoDescriptionSection.appendChild(
+    createElement("p", ["video-description"], {}, video.description)
+  );
+}
+loadVideoDetails();
+
+// Function to load the comments
+function loadComments() {
+  // Wrapper for comments
+  let commentsFragment = document.createDocumentFragment();
   for (let comment of video.comments) {
-    let commentCard = document.createElement("div");
-    commentCard.classList.add("comment-card");
-    let profilePhoto = document.createElement("div");
-    profilePhoto.classList.add("profile-photo");
-    let image = document.createElement("img");
-    image.setAttribute("src", `./assets/${comment.image}`);
-    image.setAttribute("alt", `${comment.name} profile-photo`);
-    let details = document.createElement("div");
-    details.classList.add("details");
-    let userName = document.createElement("div");
-    userName.classList.add("name");
-    userName.innerText = comment.name;
-    let commentText = document.createElement("div");
-    commentText.classList.add("comment");
-    commentText.innerText = comment.comment;
+    let commentCard = createElement("div", ["comment-card"]);
+    let profilePhoto = createElement("div", ["profile-photo"]);
+    let image = createElement("img", [], {
+      src: `./assets/${comment.image}`,
+      alt: `${comment.name} profile-photo`,
+    });
+    // Wrapper for details
+    let details = createElement("div", ["details"]);
+    let userName = createElement("div", ["name"], {}, comment.name);
+    let commentText = createElement("div", ["comment"], {}, comment.comment);
     details.appendChild(userName);
     details.appendChild(commentText);
     profilePhoto.appendChild(image);
     commentCard.appendChild(profilePhoto);
     commentCard.appendChild(details);
-    document.getElementById("comments").appendChild(commentCard);
+    commentsFragment.appendChild(commentCard);
   }
+  document.getElementById("comments").appendChild(commentsFragment);
 }
-loadVideoDetails();
+loadComments();
+// Function to play the movie
+function playMovie() {
+  document.getElementById("play-icon").style.display = "none";
+  document.getElementById("video").setAttribute("controls", "");
+  document.getElementById("video").currentTime = 0;
+  document.getElementById("video").setAttribute("autoplay", "");
+}

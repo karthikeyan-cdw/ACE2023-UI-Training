@@ -36,16 +36,7 @@
     <header>
       <div class="heading">
         <h1>Blender Movies</h1>
-        <div id="profile-section" class="profile-section">
-          <p id="user-name" class="user-name">Jim Halpert</p>
-          <div>
-            <img
-              src="./assets/images/reviewers/jim.png"
-              alt="jim profile photo"
-              class="profile-icon"
-            />
-          </div>
-        </div>
+        <div id="profile-section" class="profile-section"></div>
       </div>
     </header>
     <!-- main section -->
@@ -54,7 +45,10 @@
       <section id="left-container" class="left-container">
         <!-- video section -->
         <section id="video-section" class="video-section">
-          <video id="video" class="video" controls></video>
+          <div class="play-button">
+            <i id="play-icon" class="fa-sharp fa-regular fa-circle-play"></i>
+          </div>
+          <video id="video" class="video"></video>
           <article
             id="video-description-section"
             class="video-description-section"
@@ -76,7 +70,7 @@
     <footer>
       <div class="footer-content">
         <div class="copyright">
-          <span class="copyright-symbol">&copy;</span>Copyright 2022
+          <span class="copyright-symbol">&copy;</span>Copyrights 2022
         </div>
         <div class="copyright-owner">Blender Movies</div>
       </div>
