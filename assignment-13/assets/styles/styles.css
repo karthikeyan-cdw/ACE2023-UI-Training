@@ -55,6 +55,7 @@ body {
 .details {
   padding: 10px;
   color: var(--text-color-1);
+  width: 375px;
 }
 .name {
   font-size: 20px;
@@ -63,4 +64,11 @@ body {
 .mail-id {
   font-size: 16px;
   font-weight: 300;
+}
+/* Handling text overflow */
+.name,
+.mail-id {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

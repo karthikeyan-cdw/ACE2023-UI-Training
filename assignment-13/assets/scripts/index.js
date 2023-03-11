@@ -1,7 +1,8 @@
 // friends list
-let friends = [
+const friends = [
   {
     first_name: "Mehetabel",
+    first_name: "MehetabelMehetabelMehetabelMehetabelMehetabel",
     last_name: "Holley",
     email: "mholley0@nature.com",
     img: "http://dummyimage.com/104x144.jpg/5fa2dd/ffffff",
@@ -6001,36 +6002,52 @@ let friends = [
     img: "http://dummyimage.com/140x111.jpg/5fa2dd/ffffff",
   },
 ];
-
+// Helper function to create a dom element
+function createElement(
+  tag = "div",
+  classList = [],
+  attributes = {},
+  text = ""
+) {
+  let element = document.createElement(tag);
+  for (let className of classList) {
+    element.classList.add(className);
+  }
+  for (let attribute in attributes) {
+    element.setAttribute(attribute, attributes[attribute]);
+  }
+  element.innerText = text;
+  return element;
+}
 // Function to load and insert the friends list in the DOM
 function loadFriendsList() {
-  let list = "";
-  friends.map((friend) => {
-    let card = document.createElement("div");
-    card.classList.add("card");
-    let profilePhotoContainer = document.createElement("div");
-    profilePhotoContainer.classList.add("profile-photo");
-    let profilePhoto = document.createElement("img");
-    profilePhoto.setAttribute("src", friend.img);
-    profilePhoto.setAttribute(
-      "alt",
-      `${friend.first_name + " " + friend.last_name} profile-photo`
+  // Wrapper for friend profile card
+  let cardsFragment = document.createDocumentFragment();
+  friends.forEach((friend) => {
+    let card = createElement("div", ["card"]);
+    // Wrapper for profile photo
+    let profilePhotoContainer = createElement("div", ["profile-photo"]);
+    let profilePhoto = createElement("img", [], {
+      src: friend.img,
+      alt: `${friend.first_name} ${friend.last_name} profile photo`,
+    });
+    // Wrapper for user details
+    let details = createElement("div", ["details"]);
+    let userName = createElement(
+      "h2",
+      ["name"],
+      {},
+      `${friend.first_name} ${friend.last_name}`
     );
-    let details = document.createElement("div");
-    details.classList.add("details");
-    let userName = document.createElement("div");
-    userName.classList.add("name");
-    userName.innerText = `${friend.first_name + " " + friend.last_name}`;
-    let mailID = document.createElement("div");
-    mailID.classList.add("mail-id");
-    mailID.innerText = friend.email;
+    let mailID = createElement("p", ["mail-id"], {}, friend.email);
     details.appendChild(userName);
     details.appendChild(mailID);
     profilePhotoContainer.appendChild(profilePhoto);
     card.appendChild(profilePhotoContainer);
     card.appendChild(details);
-    document.getElementById("cards-container").appendChild(card);
+    cardsFragment.appendChild(card);
   });
+  document.getElementById("cards-container").appendChild(cardsFragment);
 }
 
 loadFriendsList();
