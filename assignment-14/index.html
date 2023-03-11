@@ -34,12 +34,7 @@
     <!-- main section -->
     <main>
       <!-- form container -->
-      <form
-        id="form-container"
-        class="form-container"
-        onSubmit="event.preventDefault();validateForm()"
-        target="#"
-      >
+      <form id="form-container" class="form-container" action="#">
         <!-- Billing Details section -->
         <h1 class="form-section-heading">BILLING DETAILS</h1>
         <div class="row-container">
@@ -70,7 +65,7 @@
           <p></p>
         </div>
         <!-- Payment Details section -->
-        <h1 class="form-section-heading">PAYMENT DETAILS</h1>
+        <h1 class="form-section-heading payment-details">PAYMENT DETAILS</h1>
         <div class="input-holder">
           <label for="cardNumber">Card Number</label>
           <input id="cardNumber" type="text" name="cardNumber" value="" />
@@ -89,7 +84,13 @@
           </div>
         </div>
         <!-- Complete Payment button -->
-        <button type="submit" class="submit-button">COMPLETE PAYMENT</button>
+        <button
+          type="submit"
+          onclick="event.preventDefault();return validateForm()"
+          class="submit-button"
+        >
+          COMPLETE PAYMENT
+        </button>
       </form>
     </main>
     <!-- linking the javascript file -->

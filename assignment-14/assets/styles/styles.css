@@ -5,7 +5,7 @@
   --background-color-input: #fefefe;
   --border-color-input: #d5d5d5;
   --theme-color-1: #071b6d;
-  --theme-color-2: #aaaaaa;
+  --theme-color-2: #dddddd;
   --error-color: #af4c45;
 }
 /* universal styling */
@@ -24,7 +24,7 @@ body {
 }
 .header img {
   width: 300px;
-  height: 150px;
+  height: 130px;
   object-fit: cover;
 }
 /* styling for the form container */
@@ -39,25 +39,30 @@ body {
   padding: 20px;
 }
 .form-section-heading {
-  margin: 25px 15px 15px 15px;
+  margin: 20px 15px 15px 15px;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--theme-color-1);
   font-style: monospace;
   letter-spacing: 1.5px;
+}
+.payment-details {
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 /* styling for the input holder */
 .input-holder {
   display: flex;
   flex-direction: column;
-  margin: 5px 15px;
+  margin: 10px 15px 5px 15px;
 }
 .row-container {
   display: flex;
+  align-items: flex-start;
 }
 .input-holder input {
   width: 100%;
-  height: 40px;
+  height: 35px;
   border-radius: 3px;
   border: 1px solid var(--border-color-input);
   background-color: var(--background-color-input);
@@ -94,4 +99,5 @@ body {
   color: var(--background-color-2);
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }

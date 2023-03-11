@@ -1,29 +1,16 @@
-//  Function to start event listeners
-function startEventListeners() {
-  const form = document.querySelector("form");
-  const data = Object.fromEntries(new FormData(form).entries());
-  for (let id in data) {
-    document
-      .getElementById(id)
-      .addEventListener("focusout", validateInputHandler);
-  }
-}
-startEventListeners();
-
 // regex validation conditions
-let formValidationConditions = {
+const formValidationConditions = {
   firstName: /^[a-zA-Z]{1,30}$/,
   lastName: /^[a-zA-Z]{1,30}$/,
-  email: /^(([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]){2,8}(\.[a-z]){2,8})?$/,
+  email: /^([a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+){1,50}$/,
   contact: /^[0-9]{10}$/,
   pincode: /^[0-9]{6}$/,
   cardNumber: /^[0-9]{16}$/,
   expiryYear: /^[0-9]{4}$/,
   cvv: /^[0-9]{3,4}$/,
 };
-
 // stored error text
-let errorText = {
+const errorText = {
   firstName: "First Name",
   lastName: "Last Name",
   email: "Email Address",
@@ -34,21 +21,19 @@ let errorText = {
   cvv: "CVV",
 };
 
-// Function to validate the input on focusout
-function validateInputHandler(event) {
-  let id = event.target.id;
-  let text = event.target.value;
-  validateInput(id, text);
-}
-
 // Function to validate the form on submit (Not required in this case)
 function validateForm() {
   const form = document.querySelector("form");
-  const data = Object.fromEntries(new FormData(form).entries());
-  for (let id in data) {
-    let text = data[id];
-    validateInput(id, text);
+  const data = new FormData(form).entries();
+  let validForm = true;
+  for (let [id, value] of data) {
+    if (validateInput(id, value) === false) validForm = false;
   }
+  if (validForm) {
+    alert("Payment Success");
+    return true;
+  }
+  return false;
 }
 
 // Function to update the DOM
@@ -73,16 +58,20 @@ function validateInput(id, text) {
       errorText[id] + " is required",
       "error-input"
     );
-  } else if (!isValid(id, text)) {
+    return false;
+  }
+  if (!isValid(id, text)) {
     updateDOM(
       currElement,
       "error-text",
       errorText[id] + " is not valid",
       "error-input"
     );
-  } else {
-    updateDOM(currElement);
+    return false;
   }
+  updateDOM(currElement);
+  window.location.href = "./index.html";
+  return true;
 }
 
 // Function for validation (conditions)
